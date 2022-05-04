@@ -1,76 +1,74 @@
-// tests/user.test.ts
-import supertest from "supertest";
-import app from "../../app.js";
-import { prisma } from '../../database.js'
+/* eslint-disable no-undef */
+import supertest from 'supertest';
+import app from '../../app.js';
+import { prisma } from '../../database.js';
 import {
-  newRecommendationFactory,
-  recommendationFactory
-} from '../factories/recommendationFactory'
+  newRecommendationFactory
+} from '../factories/recommendationFactory';
 
-describe("recommendations - test - POST/recommendations", () => {
+describe('recommendations - test - POST/recommendations', () => {
   beforeEach(truncateTables);
 
   afterAll(disconnect);
 
-  it("should return 422 given a invalid name type", async () => {
+  it('should return 422 given a invalid name type', async () => {
+    const body = newRecommendationFactory('notStringName');
 
-    const body = newRecommendationFactory('notStringName')
+    const response = await supertest(app).post('/recommendations').send(body);
 
-    const response = await supertest(app).post("/recommendations").send(body);
-
-    expect(response.status).toBe(422)
+    expect(response.status).toBe(422);
   });
 
-  it("should return 422 given a request without name", async () => {
+  it('should return 422 given a request without name', async () => {
+    const body = newRecommendationFactory('missingName');
 
-    const body = newRecommendationFactory('missingName')
+    const response = await supertest(app).post('/recommendations').send(body);
 
-    const response = await supertest(app).post("/recommendations").send(body);
-
-    expect(response.status).toBe(422)
+    expect(response.status).toBe(422);
   });
 
-  it("should return 422 given a request without link", async () => {
+  it('should return 422 given a request without link', async () => {
+    const body = newRecommendationFactory('missingLink');
 
-    const body = newRecommendationFactory('missingLink')
+    const response = await supertest(app).post('/recommendations').send(body);
 
-    const response = await supertest(app).post("/recommendations").send(body);
-
-    expect(response.status).toBe(422)
+    expect(response.status).toBe(422);
   });
 
-  it("should return 422 given a request incorrect link", async () => {
+  it('should return 422 given a invalid link', async () => {
+    const body = newRecommendationFactory('wrongLink');
 
-    const body = newRecommendationFactory('wrongLink')
+    const response = await supertest(app).post('/recommendations').send(body);
 
-    const response = await supertest(app).post("/recommendations").send(body);
-
-    expect(response.status).toBe(422)
+    expect(response.status).toBe(422);
   });
 
-  it("should return 201 given a valid request", async () => {
+  it('should return 201 and persist given a valid request', async () => {
+    const body = newRecommendationFactory('correct');
 
-    const body = newRecommendationFactory('correct')
+    const response = await supertest(app).post('/recommendations').send(body);
 
-    const response = await supertest(app).post("/recommendations").send(body);
+    const result = await prisma.recommendation.findUnique({
+      where: {
+        name: body.name
+      }
+    });
 
-    expect(response.status).toBe(422)
+    expect(response.status).toBe(201);
+    expect(result.youtubeLink).toBe(body.youtubeLink);
   });
-
 });
 
-describe("recommendations - test - GET", () => {
+describe('recommendations - test - GET', () => {
   beforeEach(truncateTables);
 
   afterAll(disconnect);
 
-  it("should return 200 and persist the user given a request", async () => {
+  it('should return 200 and persist a valid request', async () => {
+    const response = await supertest(app).get('/recommendations');
 
-    const response = await supertest(app).get("/recommendations");
-
-    expect(response.status).toBe(200)
+    expect(response.status).toBe(200);
   });
-
 });
 
 async function disconnect() {
