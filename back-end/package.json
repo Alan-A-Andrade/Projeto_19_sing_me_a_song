@@ -5,7 +5,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/server.ts"
+    "dev": "nodemon src/server.ts",
+    "seed": "dotenv -e .env.test prisma db seed",
+    "test": "NODE_OPTIONS=--experimental-vm-modules dotenv -e .env.test jest -i",
+    "test-coverage": "NODE_OPTIONS=--experimental-vm-modules jest -i --coverage"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "keywords": [],
   "author": "",
@@ -18,8 +24,9 @@
     "@types/joi": "^17.2.3",
     "@types/node": "^16.3.3",
     "@types/supertest": "^2.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
     "dotenv-cli": "^5.1.0",
-    "eslint": "^7.32.0",
     "jest": "^28.0.3",
     "nodemon": "^2.0.12",
     "prisma": "^3.13.0",
