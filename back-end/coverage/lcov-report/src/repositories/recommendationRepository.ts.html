@@ -1,70 +1,69 @@
+
 <!doctype html>
-<html lang='en'>
+<html lang="en">
 
 <head>
-  <title>Code coverage report for src/repositories/recommendationRepository.ts</title>
-  <meta charset='utf-8' />
-  <link rel='stylesheet' href='../../prettify.css' />
-  <link rel='stylesheet' href='../../base.css' />
-  <link rel='shortcut icon' type='image/x-icon' href='../../favicon.png' />
-  <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <style type='text/css'>
-    .coverage-summary .sorter {
-      background-image: url(../../sort-arrow-sprite.png);
-    }
-  </style>
+    <title>Code coverage report for src/repositories/recommendationRepository.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
 </head>
-
+    
 <body>
-  <div class='wrapper'>
+<div class='wrapper'>
     <div class='pad1'>
-      <h1><a href='../../index.html'>All files</a> / <a href='index.html'>src/repositories</a>
-        recommendationRepository.ts</h1>
-      <div class='clearfix'>
-
-        <div class='fl pad1y space-right2'>
-          <span class='strong'>41.66% </span>
-          <span class='quiet'>Statements</span>
-          <span class='fraction'>5/12</span>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/repositories</a> recommendationRepository.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>6/12</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>1/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">42.85% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>3/7</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">45.45% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>5/11</span>
+            </div>
+        
+            
         </div>
-
-
-        <div class='fl pad1y space-right2'>
-          <span class='strong'>100% </span>
-          <span class='quiet'>Branches</span>
-          <span class='fraction'>1/1</span>
-        </div>
-
-
-        <div class='fl pad1y space-right2'>
-          <span class='strong'>28.57% </span>
-          <span class='quiet'>Functions</span>
-          <span class='fraction'>2/7</span>
-        </div>
-
-
-        <div class='fl pad1y space-right2'>
-          <span class='strong'>36.36% </span>
-          <span class='quiet'>Lines</span>
-          <span class='fraction'>4/11</span>
-        </div>
-
-
-      </div>
-      <p class='quiet'>
-        Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the
-        previous block.
-      </p>
-      <template id='filterTemplate'>
-        <div class='quiet'>
-          Filter:
-          <input oninput='onInput()' type='search' id='fileSearch'>
-        </div>
-      </template>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input oninput="onInput()" type="search" id="fileSearch">
+            </div>
+        </template>
     </div>
-    <div class='status-line low'></div>
-    <pre><table class='coverage'>
-<tr><td class='line-count quiet'><a name='L1'></a><a href='#L1'>1</a>
+    <div class='status-line medium'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
 <a name='L3'></a><a href='#L3'>3</a>
 <a name='L4'></a><a href='#L4'>4</a>
@@ -136,84 +135,84 @@
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a></td><td class='line-coverage quiet'><span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-no'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-yes'>1x</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-yes'>1x</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-no'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-yes'>1x</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-no'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-no'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-no'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-no'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-no'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-yes'>1x</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span>
-<span class='cline-any cline-neutral'>&nbsp;</span></td><td class='text'><pre class='prettyprint lang-js'>import { Prisma } from '@prisma/client';
+<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Prisma } from '@prisma/client';
 import { prisma } from '../database.js';
 import { CreateRecommendationData } from '../services/recommendationsService.js';
 &nbsp;
-async function <span class='fstat-no' title='function not covered' >create(</span>createRecommendationData: CreateRecommendationData) {
-<span class='cstat-no' title='statement not covered' >  await prisma.recommendation.create({</span>
+async function create(createRecommendationData: CreateRecommendationData) {
+  await prisma.recommendation.create({
     data: createRecommendationData,
   });
 }
@@ -232,8 +231,8 @@ function findAll(findAllWhere?: FindAllWhere) {
   });
 }
 &nbsp;
-function <span class='fstat-no' title='function not covered' >getAmountByScore(</span>take: number) {
-<span class='cstat-no' title='statement not covered' >  return prisma.recommendation.findMany({</span>
+function <span class="fstat-no" title="function not covered" >getAmountByScore(</span>take: number) {
+<span class="cstat-no" title="statement not covered" >  return prisma.recommendation.findMany({</span>
     orderBy: { score: 'desc' },
     take,
   });
@@ -244,21 +243,21 @@ function getFindAllFilter(
 ): Prisma.RecommendationWhereInput {
   if (!findAllWhere) return {};
 &nbsp;
-  const { score, scoreFilter } = <span class='cstat-no' title='statement not covered' >findAllWhere;</span>
+  const { score, scoreFilter } = <span class="cstat-no" title="statement not covered" >findAllWhere;</span>
 &nbsp;
-<span class='cstat-no' title='statement not covered' >  return {</span>
+<span class="cstat-no" title="statement not covered" >  return {</span>
     score: { [scoreFilter]: score },
   };
 }
 &nbsp;
-function <span class='fstat-no' title='function not covered' >find(</span>id: number) {
-<span class='cstat-no' title='statement not covered' >  return prisma.recommendation.findUnique({</span>
+function <span class="fstat-no" title="function not covered" >find(</span>id: number) {
+<span class="cstat-no" title="statement not covered" >  return prisma.recommendation.findUnique({</span>
     where: { id },
   });
 }
 &nbsp;
-async function <span class='fstat-no' title='function not covered' >updateScore(</span>id: number, operation: 'increment' | 'decrement') {
-<span class='cstat-no' title='statement not covered' >  await prisma.recommendation.update({</span>
+async function <span class="fstat-no" title="function not covered" >updateScore(</span>id: number, operation: 'increment' | 'decrement') {
+<span class="cstat-no" title="statement not covered" >  await prisma.recommendation.update({</span>
     where: { id },
     data: {
       score: { [operation]: 1 },
@@ -266,8 +265,8 @@ async function <span class='fstat-no' title='function not covered' >updateScore(
   });
 }
 &nbsp;
-async function <span class='fstat-no' title='function not covered' >remove(</span>id: number) {
-<span class='cstat-no' title='statement not covered' >  await prisma.recommendation.delete({</span>
+async function <span class="fstat-no" title="function not covered" >remove(</span>id: number) {
+<span class="cstat-no" title="statement not covered" >  await prisma.recommendation.delete({</span>
     where: { id },
   });
 }
@@ -280,27 +279,23 @@ export const recommendationRepository = {
   getAmountByScore,
   remove,
 };
-&nbsp;</pre>
-    </td>
-    </tr>
-    </table>
-    </pre>
+&nbsp;</pre></td></tr></table></pre>
 
-    <div class='push'></div><!-- for sticky footer -->
-  </div><!-- /wrapper -->
-  <div class='footer quiet pad2 space-top1 center small'>
-    Code coverage generated by
-    <a href='https://istanbul.js.org/' target='_blank' rel='noopener noreferrer'>istanbul</a>
-    at Wed May 04 2022 16:36:05 GMT-0300 (Brasilia Standard Time)
-  </div>
-  <script src='../../prettify.js'></script>
-  <script>
-    window.onload = function () {
-      prettyPrint();
-    };
-  </script>
-  <script src='../../sorter.js'></script>
-  <script src='../../block-navigation.js'></script>
-</body>
-
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at Wed May 04 2022 19:59:39 GMT-0300 (Brasilia Standard Time)
+            </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
 </html>
+    

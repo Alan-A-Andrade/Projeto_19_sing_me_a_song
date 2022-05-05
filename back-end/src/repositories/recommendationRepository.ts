@@ -4,7 +4,7 @@ import { CreateRecommendationData } from '../services/recommendationsService.js'
 
 async function create(createRecommendationData: CreateRecommendationData) {
   await prisma.recommendation.create({
-    data: createRecommendationData,
+    data: createRecommendationData
   });
 }
 
@@ -25,7 +25,7 @@ function findAll(findAllWhere?: FindAllWhere) {
 function getAmountByScore(take: number) {
   return prisma.recommendation.findMany({
     orderBy: { score: 'desc' },
-    take,
+    take
   });
 }
 
@@ -37,13 +37,13 @@ function getFindAllFilter(
   const { score, scoreFilter } = findAllWhere;
 
   return {
-    score: { [scoreFilter]: score },
+    score: { [scoreFilter]: score }
   };
 }
 
 function find(id: number) {
   return prisma.recommendation.findUnique({
-    where: { id },
+    where: { id }
   });
 }
 
@@ -51,14 +51,14 @@ async function updateScore(id: number, operation: 'increment' | 'decrement') {
   await prisma.recommendation.update({
     where: { id },
     data: {
-      score: { [operation]: 1 },
-    },
+      score: { [operation]: 1 }
+    }
   });
 }
 
 async function remove(id: number) {
   await prisma.recommendation.delete({
-    where: { id },
+    where: { id }
   });
 }
 
@@ -68,5 +68,5 @@ export const recommendationRepository = {
   find,
   updateScore,
   getAmountByScore,
-  remove,
+  remove
 };

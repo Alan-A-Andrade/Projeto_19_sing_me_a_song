@@ -54,7 +54,7 @@ async function getRandom() {
 async function getByScore(scoreFilter: 'gt' | 'lte') {
   const recommendations = await recommendationRepository.findAll({
     score: 10,
-    scoreFilter,
+    scoreFilter
   });
 
   if (recommendations.length > 0) {
@@ -79,5 +79,5 @@ export const recommendationService = {
   getRandom,
   get,
   getById,
-  getTop,
+  getTop
 };
