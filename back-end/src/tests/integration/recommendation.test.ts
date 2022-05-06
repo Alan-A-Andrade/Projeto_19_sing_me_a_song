@@ -3,9 +3,10 @@ import supertest from 'supertest';
 import app from '../../app.js';
 import { prisma } from '../../database.js';
 import {
-  newRecommendationFactory,
+  recommendationBodyFactory,
   recommendationFactory,
-  manyRecommendationsFactory
+  manyRecommendationsFactory,
+  nthRecommendationsFactory
 } from '../factories/recommendationFactory';
 import { faker } from '@faker-js/faker';
 
@@ -14,40 +15,40 @@ describe('recommendations - test - POST/recommendations', () => {
 
   afterAll(disconnect);
 
-  // it('should return 422 given a invalid name type', async () => {
-  //   const body = newRecommendationFactory('notStringName');
+  it('should return 422 given a invalid name type', async () => {
+    const body = recommendationBodyFactory('notStringName');
 
-  //   const response = await supertest(app).post('/recommendations').send(body);
+    const response = await supertest(app).post('/recommendations').send(body);
 
-  //   expect(response.status).toBe(422);
-  // });
+    expect(response.status).toBe(422);
+  });
 
-  // it('should return 422 given a request without name', async () => {
-  //   const body = newRecommendationFactory('missingName');
+  it('should return 422 given a request without name', async () => {
+    const body = recommendationBodyFactory('missingName');
 
-  //   const response = await supertest(app).post('/recommendations').send(body);
+    const response = await supertest(app).post('/recommendations').send(body);
 
-  //   expect(response.status).toBe(422);
-  // });
+    expect(response.status).toBe(422);
+  });
 
-  // it('should return 422 given a request without link', async () => {
-  //   const body = newRecommendationFactory('missingLink');
+  it('should return 422 given a request without link', async () => {
+    const body = recommendationBodyFactory('missingLink');
 
-  //   const response = await supertest(app).post('/recommendations').send(body);
+    const response = await supertest(app).post('/recommendations').send(body);
 
-  //   expect(response.status).toBe(422);
-  // });
+    expect(response.status).toBe(422);
+  });
 
-  // it('should return 422 given a invalid link', async () => {
-  //   const body = newRecommendationFactory('wrongLink');
+  it('should return 422 given a invalid link', async () => {
+    const body = recommendationBodyFactory('wrongLink');
 
-  //   const response = await supertest(app).post('/recommendations').send(body);
+    const response = await supertest(app).post('/recommendations').send(body);
 
-  //   expect(response.status).toBe(422);
-  // });
+    expect(response.status).toBe(422);
+  });
 
   it('should return 201 and persist given a valid request', async () => {
-    const body = newRecommendationFactory('correct');
+    const body = recommendationBodyFactory('correct');
 
     const response = await supertest(app).post('/recommendations').send(body);
 
@@ -122,9 +123,11 @@ describe('recommendations - test - GET/recommendations/', () => {
   afterAll(disconnect);
 
   it('should return 200 and persist a valid request', async () => {
+    await nthRecommendationsFactory(20);
     const response = await supertest(app).get('/recommendations');
 
     expect(response.status).toBe(200);
+    expect(response.body.length).toBeLessThanOrEqual(10);
   });
 });
 

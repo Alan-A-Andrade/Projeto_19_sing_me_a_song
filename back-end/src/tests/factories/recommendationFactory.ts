@@ -12,7 +12,7 @@ export async function recommendationFactory() {
   return result;
 }
 
-export async function recomendationIncrementScore(id:number) {
+export async function recommendationIncrementScore(id:number) {
   await prisma.recommendation.update({
     where: { id },
     data: {
@@ -21,9 +21,18 @@ export async function recomendationIncrementScore(id:number) {
   });
 }
 
+export async function recommendationDecreaseScore(id:number) {
+  await prisma.recommendation.update({
+    where: { id },
+    data: {
+      score: { decrement: 1 }
+    }
+  });
+}
+
 type bodyInputType = 'correct' | 'wrongLink' | 'missingName' | 'missingLink' | 'notStringName'
 
-export function newRecommendationFactory(setting: bodyInputType) {
+export function recommendationBodyFactory(setting: bodyInputType) {
   let name, youtubeLink;
 
   switch (setting) {
@@ -82,6 +91,22 @@ export async function manyRecommendationsFactory() {
         score: faker.datatype.number(500)
       }
     ],
+    skipDuplicates: true
+  }
+  );
+}
+
+export async function nthRecommendationsFactory(number: number) {
+  const data = [];
+  for (let i = 0; i < number; i++) {
+    data.push({
+      name: faker.name.findName(),
+      youtubeLink: faker.internet.url()
+    });
+  }
+
+  await prisma.recommendation.createMany({
+    data,
     skipDuplicates: true
   }
   );
