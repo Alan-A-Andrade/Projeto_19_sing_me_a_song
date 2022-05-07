@@ -19,9 +19,9 @@ async function downvote(id: number) {
   const recommendation = await recommendationRepository.find(id);
   if (!recommendation) throw notFoundError();
 
-  await recommendationRepository.updateScore(id, 'decrement');
+  const updatedRecommendation = await recommendationRepository.updateScore(id, 'decrement');
 
-  if (recommendation.score < -5) {
+  if (updatedRecommendation.score < -5) {
     await recommendationRepository.remove(id);
   }
 }

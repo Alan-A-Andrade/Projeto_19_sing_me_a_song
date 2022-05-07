@@ -26,11 +26,11 @@ describe('unit - test /RecommendationService/downvote', () => {
       id: 1,
       name: faker.name.findName(),
       youtubeLink: faker.internet.url(),
-      score: -6
+      score: -5
     };
 
     jest.spyOn(recommendationRepository, 'find').mockResolvedValue(recommendation);
-    jest.spyOn(recommendationRepository, 'updateScore').mockResolvedValue(null);
+    jest.spyOn(recommendationRepository, 'updateScore').mockResolvedValue({ ...recommendation, score: -6 });
 
     const remove = jest
       .spyOn(recommendationRepository, 'remove')
@@ -64,9 +64,31 @@ describe('unit - test /RecommendationService/getByScore', () => {
   });
 });
 
+describe('unit - test /RecommendationService/getByScore', () => {
+  it('should findAll filtered with valid scoreFilter GT', async () => {
+    const result = jest
+      .spyOn(recommendationRepository, 'findAll');
+
+    await recommendationService.getByScore('gt');
+
+    expect(result).toBeCalledWith({ score: 10, scoreFilter: 'gt' });
+  });
+});
+
+describe('unit - test /RecommendationService/getByScore', () => {
+  it('should findAll filtered with valid scoreFilter lte', async () => {
+    const result = jest
+      .spyOn(recommendationRepository, 'findAll');
+
+    await recommendationService.getByScore('lte');
+
+    expect(result).toBeCalledWith({ score: 10, scoreFilter: 'lte' });
+  });
+});
+
 describe('unit - test /RecommendationService/getScoreFilter', () => {
   it('should return lte if value is higher than 0.7', async () => {
-    const result = recommendationService.getScoreFilter(0.7);
+    const result = recommendationService.getScoreFilter(0.71);
 
     expect(result).toBe('lte');
   });

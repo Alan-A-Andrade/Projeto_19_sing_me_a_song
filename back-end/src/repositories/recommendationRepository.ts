@@ -49,7 +49,7 @@ function find(id: number) {
 }
 
 async function updateScore(id: number, operation: 'increment' | 'decrement') {
-  await prisma.recommendation.update({
+  return await prisma.recommendation.update({
     where: { id },
     data: {
       score: { [operation]: 1 }

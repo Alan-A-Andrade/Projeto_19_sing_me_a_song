@@ -201,7 +201,7 @@ FNDA:1,getById
 FNDA:1,get
 FNDA:1,getTop
 FNDA:2,getRandom
-FNDA:3,getByScore
+FNDA:5,getByScore
 FNDA:4,getScoreFilter
 DA:8,1
 DA:12,2
@@ -222,10 +222,10 @@ DA:46,2
 DA:47,1
 DA:50,1
 DA:51,1
-DA:55,3
-DA:60,3
+DA:55,5
+DA:60,5
 DA:61,1
-DA:64,2
+DA:64,4
 DA:68,4
 DA:69,3
 DA:72,1
