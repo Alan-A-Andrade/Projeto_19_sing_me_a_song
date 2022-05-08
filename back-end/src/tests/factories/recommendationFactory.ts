@@ -1,5 +1,6 @@
 import { prisma } from '../../database';
 import { faker } from '@faker-js/faker';
+import { Recommendation } from '@prisma/client';
 
 export async function recommendationFactory() {
   const result = await prisma.recommendation.create({
@@ -10,6 +11,15 @@ export async function recommendationFactory() {
   });
 
   return result;
+}
+
+export function recommendationDataFactory() :Recommendation {
+  return {
+    id: 1,
+    name: faker.name.findName(),
+    youtubeLink: faker.internet.url(),
+    score: -5
+  };
 }
 
 export async function recommendationIncrementScore(id:number) {

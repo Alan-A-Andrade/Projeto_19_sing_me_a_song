@@ -48,8 +48,14 @@ function find(id: number) {
   });
 }
 
+function findByName(name: string) {
+  return prisma.recommendation.findUnique({
+    where: { name }
+  });
+}
+
 async function updateScore(id: number, operation: 'increment' | 'decrement') {
-  return await prisma.recommendation.update({
+  return prisma.recommendation.update({
     where: { id },
     data: {
       score: { [operation]: 1 }
@@ -67,6 +73,7 @@ export const recommendationRepository = {
   create,
   findAll,
   find,
+  findByName,
   updateScore,
   getAmountByScore,
   remove
