@@ -17,7 +17,7 @@ const conflictError = {
 
 describe('unit - test /RecommendationService/Insert', () => {
   beforeEach(resetTests);
-  it('should throw erro if no recommendation is found', async () => {
+  it('should throw erro if duplicate recommendation is found', async () => {
     const recommendation = recommendationDataFactory();
 
     jest.spyOn(recommendationRepository, 'findByName').mockResolvedValue({ ...recommendation });

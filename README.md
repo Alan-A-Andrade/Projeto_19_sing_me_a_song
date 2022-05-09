@@ -69,7 +69,7 @@ npx prisma migrate dev
 5. Run the project with
 
 ```bash
-npm run dev (backend/node development)
+npm run dev-start (backend/node development test routes)
 npm start (frontend/react developtment)
 ```
 
