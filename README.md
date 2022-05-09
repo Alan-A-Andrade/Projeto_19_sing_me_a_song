@@ -80,4 +80,3 @@ npm run test-coverage (backend/jest)
 npm cypress open (frontend/cypress)
 
 ```
-
